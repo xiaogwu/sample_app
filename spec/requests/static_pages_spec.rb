@@ -74,5 +74,4 @@ describe "Static pages" do
     page.should # fill in
     click_link "sample app"
     page.should # fill in
-  end
-end
+  end end

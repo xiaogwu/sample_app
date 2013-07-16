@@ -30,7 +30,7 @@ then
     fi
   done
   unset __hook
-  if (( ${rvm_use_flag:=1} >= 2 )) # display only when forced
+  if (( ${rvm_use_flag:=1} >= 1 )) # display automatically
   then
     if [[ $- == *i* ]] # check for interactive shells
     then printf "%b" "Using: \E[32m$GEM_HOME\E[0m
@@ -41,7 +41,7 @@ then
   fi
 else
   # If the environment file has not yet been created, use the RVM CLI to select.
-  rvm --create  "$environment_id" || {
+  rvm --create use  "$environment_id" || {
     echo "Failed to create RVM environment '${environment_id}'."
     return 1
   }
